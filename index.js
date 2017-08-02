@@ -10,61 +10,29 @@ const findOrAdd = (rootNode, node) => {
   }
   if(node.data < rootNode.data){
       if(rootNode.left){
-        findOrAdd(rootNode.left, node)
+        return findOrAdd(rootNode.left, node)
       } else {
-        rootNode.left = node
+        return rootNode.left = node
       }
   } else if(node.data > rootNode.data) {
     if(rootNode.right){
-      findOrAdd(rootNode.right, node)
+      return findOrAdd(rootNode.right, node)
     } else {
-      rootNode.right = node
+      return rootNode.right = node
     }
   }
 }
 
 const max = node => {
-  let maxLeft,
-      maxLeftValue = node.data,
-      maxRight,
-      maxRightValue = node.data;
-
-  if (node.left) {
-    maxLeft= max(node.left);
-    maxLeftValue = maxLeft.data;
-  }
   if (node.right) {
-    maxRight = max(node.right);
-    maxRightValue = maxRight.data;
+    return max(node.right);
   }
-
-  if(maxLeftValue > node.data && maxLeftValue > maxRightValue) {
-    return maxLeft;
-  } else if (maxRightValue > node.data && maxRightValue > maxLeftValue) {
-    return maxRight;
-  } else return node;
-
+  return node;
 }
 
 const min = node => {
-  let minLeft,
-      minLeftValue = node.data,
-      minRight,
-      minRightValue = node.data;
-
-  if (node.left) {
-    minLeft= max(node.left);
-    minLeftValue = minLeft.data;
+  if(node.left) {
+    return min(node.left);
   }
-  if (node.right) {
-    minRight = max(node.right);
-    minRightValue = minRight.data;
-  }
-
-  if(minLeftValue < node.data && minLeftValue < minRightValue) {
-    return minLeft;
-  } else if (minRightValue < node.data && minRightValue < minLeftValue) {
-    return minRight;
-  } else return node;
-
+  return node;
 }
