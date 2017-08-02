@@ -2,7 +2,7 @@ var chai = require('chai');
 var sinon = require('sinon');
 
 beforeEach(function() {
-  expect.spyOn(console, 'log')
+  //expect.spyOn(console, 'log')
 })
 
 afterEach(function() {
@@ -12,6 +12,7 @@ afterEach(function() {
 
 describe('#inOrder', function() {
   it("prints out the data in the node from lowest to highest", function() {
+    expect.spyOn(console, 'log')
     let node = {data: 5, left:
                       {data: 3, left: null, right: null},
                         right: {data: 7, left: null,
@@ -58,7 +59,7 @@ describe('#findOrAdd', function() {
     findOrAdd(rootNode, secondNewNode)
     findOrAdd(rootNode, thirdNewNode)
     let result = findOrAdd(rootNode, thirdNewNode)
-    expect(result).toEqual(true)
+    expect(result).isTrue;
   })
 });
 
