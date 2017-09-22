@@ -69,7 +69,7 @@ describe('#max', function() {
                         right: {data: 7, left: null,
                         right: {data: 9, left: null, right: null}
                       }}
-  expect(max(node).data).toEqual(9)
+  expect(max(node)).toEqual(9)
   })
 })
 
@@ -80,6 +80,6 @@ describe('#min', function() {
                         right: {data: 7, left: null,
                         right: {data: 9, left: null, right: null}
                       }}
-    expect(min(node).data).toEqual(3)
+    expect(min(node)).toEqual(3)
   })
 })
