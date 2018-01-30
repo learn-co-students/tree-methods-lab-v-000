@@ -48,4 +48,5 @@ function max(rootNode){
     maxNode = max(currentNode)
   }
   return maxNode
+  debugger
 }
