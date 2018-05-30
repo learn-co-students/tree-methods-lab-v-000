@@ -99,3 +99,4 @@ function Delete(currentNode, deleteNode){
    
     
  }
+https://jsbin.com/zodasecisu/edit?js
