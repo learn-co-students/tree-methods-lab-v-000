@@ -47,7 +47,6 @@ function min(node){
 	};
 };
 
-
 function findParent(currentNode, node){
   if(currentNode.data === node.date){
      return false;
@@ -70,3 +69,33 @@ function findParent(currentNode, node){
   }
   
 }
+
+
+function Delete(currentNode, deleteNode){
+    var parent = findParent(currentNode, deleteNode);
+   
+    if(!deletNode.left && !deleteNode.right){
+      if(deleteNode.data > parent.data){
+        parent.right = null;
+      } else {
+        parent.left = null;
+      }
+    }
+   
+   if(!deleteNode.left){
+      if(deleteNode.data > parent.data){
+        parent.right = deleteNode.right;
+      } else {
+        parent.left = deleteNode.right;
+      }
+     
+   } else if(!deleteNode.right){
+      if(deleteNode.data > parent.data){
+        parent.right = deleteNode.left;
+      } else {
+        parent.left = deleteNode.left;
+      }
+   }
+   
+    
+ }
