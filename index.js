@@ -9,3 +9,21 @@ function inOrder(node){
         inOrder(node.right)
     }
 }
+
+function findOrAdd(currentNode, newNode){
+    if (currentNode.data === newNode.data){
+        return
+    }
+    else if (currentNode.data > newNode.data){
+        currentNode.left ?
+            findOrAdd(currentNode.left, newNode) :
+            (currentNode.left = newNode)
+    }
+    else if (currentNode.data < newNode.data){
+        currentNode.right ?
+            findOrAdd(currentNode.right, newNode) : 
+            (currentNode.right = newNode)
+    }
+
+    return true
+}
