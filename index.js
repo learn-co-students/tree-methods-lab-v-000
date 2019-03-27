@@ -25,7 +25,25 @@ function findOrAdd(rootNode, newNode){
     if(currentNode){
       return findOrAdd(currentNode, newNode);
     }else{
-      returnrootNode.right = newNode
+      return rootNode.right = newNode
     }
+  }
+}
+
+function max(node){
+  // dig to the bottom/most right point of tree
+  if(node.right){
+    return max(node.right)
+  }else{
+    return node
+  }
+}
+
+function min(node){
+  // dig to the bottom/most left point of tree
+  if(node.left){
+    return max(node.left)
+  }else{
+    return node
   }
 }
