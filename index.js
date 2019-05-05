@@ -35,3 +35,11 @@ function max(rootNode) {
     return rootNode
   }
 }
+
+function min(rootNode) {
+  if (rootNode.left) {
+    return min(rootNode.left)
+  } else {
+    return rootNode
+  }
+}
