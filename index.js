@@ -27,3 +27,11 @@ function findOrAdd(rootNode, newNode) {
   }
   return true
 }
+
+function max(rootNode) {
+  if (rootNode.right) {
+    return max(rootNode.right)
+  } else {
+    return rootNode
+  }
+}
