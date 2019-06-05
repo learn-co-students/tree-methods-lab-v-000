@@ -1,10 +1,10 @@
-function inOrder(currentNode){
-  if(currentNode.left){
-    inOrder(currentNode.left)
+function inOrder(node){
+  if(node.left){
+    inOrder(node.left)
   }
-  console.log(currentNode.data)
-  if(currentNode.right){
-    inOrder(currentNode.right)
+  console.log(node.data)
+  if(node.right){
+    inOrder(node.right)
   }
 }
 
@@ -29,24 +29,18 @@ function findOrAdd(rootNode, newNode) {
 }
 
 
-function max(currentNode) {
-	let val;
-  if (currentNode.right){
-    val = currentNode.right;
-    max(currentNode.right);
+function max(node) {
+  if (node.right){
+    return max(node.right);
   } else {
-	   val = currentNode;
+	   return node;
   }
-	return val.right;
 }
 
-function min(currentNode) {
-	let val;
-  if (currentNode.left){
-    val = currentNode.left;
-    min(currentNode.left)
+function min(node) {
+  if (node.left){
+    return min(node.left);
   } else {
-	   val = currentNode;
+     return node;
   }
-	return val;
 }
