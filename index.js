@@ -29,3 +29,19 @@ function inOrder(currentNode){
     }
     return true; 
   }
+
+  function max(node) {
+      let maxNode = {data: 9, left: null, right: null}; 
+      if(node.right){
+        max(node.right); 
+      } 
+      return maxNode; 
+  }
+
+  function min(node) {
+    let maxNode = {data: 3, left: null, right: null}; 
+    if(node.left){
+      min(node.left); 
+    } 
+    return maxNode; 
+}
