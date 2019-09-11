@@ -15,33 +15,32 @@ function inOrder(currentNode){
     } else if(newNode.data < rootNode.data){
         currentNode = rootNode.left
         if(currentNode){
-          findOrAdd(currentNode, newNode)
+          return findOrAdd(currentNode, newNode)
         } else {
-          rootNode.left = newNode
+          return rootNode.left = newNode
         }
     } else if(newNode.data > rootNode.data) {
       currentNode = rootNode.right
       if(currentNode){
-        findOrAdd(currentNode, newNode)
+        return findOrAdd(currentNode, newNode)
       } else {
-        rootNode.right = newNode
+        return rootNode.right = newNode
       }
     }
-    return true; 
   }
 
-  function max(node) {
-      let maxNode = {data: 9, left: null, right: null}; 
-      if(node.right){
-        max(node.right); 
-      } 
-      return maxNode; 
+  function max(currentNode){
+    if(currentNode.right){
+      return max(currentNode.right)
+    } else {
+      return currentNode;
+    }
   }
-
-  function min(node) {
-    let maxNode = {data: 3, left: null, right: null}; 
-    if(node.left){
-      min(node.left); 
-    } 
-    return maxNode; 
-}
+  
+  function min(currentNode){
+    if(currentNode.left){
+      return min(currentNode.left)
+    } else {
+      return currentNode;
+    }
+  }
