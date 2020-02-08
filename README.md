@@ -1,4 +1,4 @@
-## Tree Methods
+indO## Tree Methods
 
 Now that we have seen some of the benefits of trees, we should become familiar with using them.  Just as we are familiar with using arrays and linked lists.  In the following lab, you will implement methods to print out the nodes of a tree in order, and find the maximum and minimum.  
 
